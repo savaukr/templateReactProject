@@ -1,0 +1,1 @@
+(()=>{"use strict";console.log("SOME FUNCTION any text"),document.body.innerHTML="<div>DEV SERVER is working</div>"})();

@@ -10,12 +10,13 @@ import { MainPageAsync } from "./pages/MainPage/MainPageAsync";
 // import { Counter } from "./components/Counter";
 
 import "./styles/index.scss";
+import { classNames } from "./helpers/classNames/classNames";
 
 const App = () => {
   const { theme, toggleTheme } = useTheme();
 
   return (
-    <div className={`app ${theme}`}>
+    <div className={classNames("app", {}, [theme])}>
       {/* This is app component
       <Counter /> */}
       <Link className="menu-link" to={"/"}>

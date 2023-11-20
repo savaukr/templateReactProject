@@ -2,15 +2,15 @@ import React, { Suspense } from "react";
 import { Route, Routes } from "react-router-dom";
 import { Link } from "react-router-dom";
 
-import { useTheme } from "./theme/useTheme";
-import { AboutPageAsync } from "./pages/AboutPage/AboutPage.async";
-import { MainPageAsync } from "./pages/MainPage/MainPageAsync";
-// import MainPage from "../pages/MainPage/MainPage";
-// import AboutPage from "../pages/AboutPage/AboutPage";
+import { useTheme } from "./providers/ThemeProvider/ui/index";
+import { AboutPageAsync } from "pages/AboutPage/index";
+import { MainPageAsync } from "pages/MainPage";
+// import {MainPage} from from "pages/MainPage";
+// import {  AboutPage } from "pages/AboutPage/index";
 // import { Counter } from "./components/Counter";
 
 import "./styles/index.scss";
-import { classNames } from "./helpers/classNames/classNames";
+import { classNames } from "shared/lib/classNames/classNames";
 
 const App = () => {
   const { theme, toggleTheme } = useTheme();

@@ -1,7 +1,7 @@
 import { render } from "react-dom";
 import { BrowserRouter } from "react-router-dom";
-import ThemeProvider from "./theme/ThemeProvider";
-import App from "./App";
+import { ThemeProvider } from "./app/providers/ThemeProvider/ui/index";
+import App from "./app/App";
 
 import { someFn } from "./test";
 

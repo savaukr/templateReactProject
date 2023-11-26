@@ -2,13 +2,15 @@ type Mods = Record<string, boolean | string>;
 
 export function classNames(
   cls: string,
-  mods: Mods,
-  additional: string[]
+  mods: Mods = {},
+  additional: string[] = []
 ): string {
   const modsArr = Object.entries(mods).reduce<string[]>(
     (acc, [classsName, value]) => (Boolean(value) ? [...acc, classsName] : acc),
     []
   );
 
-  return [cls, ...additional, ...modsArr].join(" ");
+  return [cls, ...additional.filter((item) => Boolean(item)), ...modsArr].join(
+    " "
+  );
 }

@@ -11,25 +11,20 @@ import { MainPageAsync } from "pages/MainPage";
 
 import "./styles/index.scss";
 import { classNames } from "shared/lib/classNames/classNames";
+import { AppRouter } from "./providers/router";
 
 const App = () => {
   const { theme, toggleTheme } = useTheme();
 
   return (
     <div className={classNames("app", {}, [theme])}>
-      {/* This is app component
-      <Counter /> */}
+      {/* This is app component*/}
       <Link className="menu-link" to={"/"}>
         Main page
       </Link>
       <Link to={"/about"}>About us</Link>
       <button onClick={toggleTheme}>Change theme</button>
-      <Suspense fallback={<div>Loading...</div>}>
-        <Routes>
-          <Route path={"/about"} element={<AboutPageAsync />} />
-          <Route path={"/"} element={<MainPageAsync />} />
-        </Routes>
-      </Suspense>
+      <AppRouter />
     </div>
   );
 };

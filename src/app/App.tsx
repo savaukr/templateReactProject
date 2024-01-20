@@ -5,6 +5,7 @@
 import { useTheme } from "./providers/ThemeProvider/ui/index";
 import { Navbar } from "widgents/Navbar";
 import { AppRouter } from "./providers/router";
+
 // import { AboutPageAsync } from "pages/AboutPage/index";
 // import { MainPageAsync } from "pages/MainPage";
 // import {MainPage} from from "pages/MainPage";
@@ -14,13 +15,12 @@ import { classNames } from "shared/lib/classNames/classNames";
 import "./styles/index.scss";
 
 const App = () => {
-  const { theme, toggleTheme } = useTheme();
+  const { theme } = useTheme();
 
   return (
     <div className={classNames("app", {}, [theme])}>
       {/* This is app component*/}
       <Navbar />
-      <button onClick={toggleTheme}>Change theme</button>
       <AppRouter />
     </div>
   );

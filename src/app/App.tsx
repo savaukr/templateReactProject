@@ -1,4 +1,5 @@
-// import React, { Suspense } from "react";
+import React, { Suspense } from "react";
+
 // import { Route, Routes } from "react-router-dom";
 // import { Link } from "react-router-dom";
 
@@ -20,12 +21,13 @@ const App = () => {
 
   return (
     <div className={classNames("app", {}, [theme])}>
-      {/* This is app component*/}
-      <Navbar />
-      <div className="content-page">
-        <Sidebar />
-        <AppRouter />
-      </div>
+      <Suspense fallback="">
+        <Navbar />
+        <div className="content-page">
+          <Sidebar />
+          <AppRouter />
+        </div>
+      </Suspense>
     </div>
   );
 };

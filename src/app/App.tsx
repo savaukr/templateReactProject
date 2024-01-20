@@ -5,6 +5,7 @@
 import { useTheme } from "./providers/ThemeProvider/ui/index";
 import { Navbar } from "widgents/Navbar";
 import { AppRouter } from "./providers/router";
+import { Sidebar } from "widgents/Sidebar";
 
 // import { AboutPageAsync } from "pages/AboutPage/index";
 // import { MainPageAsync } from "pages/MainPage";
@@ -21,7 +22,10 @@ const App = () => {
     <div className={classNames("app", {}, [theme])}>
       {/* This is app component*/}
       <Navbar />
-      <AppRouter />
+      <div className="content-page">
+        <Sidebar />
+        <AppRouter />
+      </div>
     </div>
   );
 };

@@ -15,7 +15,15 @@ const AppRouter = () => {
         {/* <Route path={"/about"} element={<AboutPageAsync />} />
         <Route path={"/"} element={<MainPageAsync />} /> */}
         {Object.values(routeConfig).map(({ path, element }) => (
-          <Route path={path} element={element} />
+          <Route
+            key={path}
+            path={path}
+            element={
+              <Suspense fallback={<div>Loading...</div>}>
+                <div className="page-wrapper">{element}</div>
+              </Suspense>
+            }
+          />
         ))}
       </Routes>
     </Suspense>

@@ -29,7 +29,7 @@ export default function buildLoaders({
           [
             "i18next-extract",
             {
-              locales: ["en", "ru"],
+              locales: ["uk", "en"],
               keyAsDefaultValue: false,
             },
           ],
@@ -67,5 +67,5 @@ export default function buildLoaders({
     use: "ts-loader",
     exclude: /node_modules/,
   };
-  return [fileLoader, svgLoader, typescriptLoaders, babelLoader, cssLoaders];
+  return [fileLoader, svgLoader, babelLoader, typescriptLoaders, cssLoaders];
 }

@@ -67,5 +67,5 @@ export default function buildLoaders({
     use: "ts-loader",
     exclude: /node_modules/,
   };
-  return [babelLoader, typescriptLoaders, cssLoaders, svgLoader, fileLoader];
+  return [fileLoader, svgLoader, typescriptLoaders, babelLoader, cssLoaders];
 }

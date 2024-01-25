@@ -18,6 +18,25 @@ export default function buildLoaders({
       },
     ],
   };
+  const babelLoader = {
+    test: /\.m?(js|jsx|ts|tsx)$/,
+    exclude: /node_modules/,
+    use: {
+      loader: "babel-loader",
+      options: {
+        presets: ["@babel/preset-env"],
+        plugins: [
+          [
+            "i18next-extract",
+            {
+              locales: ["en", "ru"],
+              keyAsDefaultValue: false,
+            },
+          ],
+        ],
+      },
+    },
+  };
 
   const cssLoaders = {
     test: /\.s[ac]ss$/i,
@@ -48,5 +67,5 @@ export default function buildLoaders({
     use: "ts-loader",
     exclude: /node_modules/,
   };
-  return [typescriptLoaders, cssLoaders, svgLoader, fileLoader];
+  return [babelLoader, typescriptLoaders, cssLoaders, svgLoader, fileLoader];
 }

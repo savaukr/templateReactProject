@@ -38,4 +38,7 @@ module.exports = {
     '@typescript-eslint/naming-convention': 'off',
     '@typescript-eslint/no-floating-promises': 'off',
   },
+  globals: {
+    __IS_DEV__: true,
+  },
 };

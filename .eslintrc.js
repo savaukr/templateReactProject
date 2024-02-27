@@ -36,8 +36,27 @@ module.exports = {
     '@typescript-eslint/consistent-type-definitions': 'off',
     '@typescript-eslint/object-curly-spacing': 'off',
     'object-curly-spacing': 'off',
-    '@typescript-eslint/naming-convention': 'off',
+    // '@typescript-eslint/naming-convention': 'off',
+    '@typescript-eslint/naming-convention': [
+          'error',
+          {
+            selector: ['variable', 'typeLike', 'default', 'enumMember'],
+            types: ['boolean'],
+            format: ['PascalCase',
+              'camelCase',
+              'strictCamelCase',
+              'PascalCase',
+              'StrictPascalCase',
+              'snake_case',
+              'UPPER_CASE'
+            ],
+            prefix: ['is', 'should', 'has', 'can', 'did', 'will', '__IS_'],
+          },
+
+        ],
+
     '@typescript-eslint/no-floating-promises': 'off',
+    // 'max-len': ['error', {ignoreComments: true}],
   },
   globals: {
     __IS_DEV__: true,

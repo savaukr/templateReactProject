@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/naming-convention */
 import type webpack from 'webpack';
 import path from 'path';
 import {buildWbpackConfig} from './config/build/buildWebpackConfig';

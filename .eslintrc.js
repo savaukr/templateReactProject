@@ -23,7 +23,7 @@ module.exports = {
     ecmaVersion: 'latest',
     sourceType: 'module',
   },
-  plugins: ['react', '@typescript-eslint', 'i18next',],
+  plugins: ['react', '@typescript-eslint', 'i18next'],
   rules: {
     'react/jsx-indent': 'off',
     indent: 'off',

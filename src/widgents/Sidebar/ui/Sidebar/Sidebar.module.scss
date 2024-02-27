@@ -6,10 +6,12 @@
   transition: width 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
   padding: 6px;
 }
+
 .collapsed {
   font-size: inherit;
   width: var(--sidebar-width-collapsed);
 }
+
 .lang {
   margin-left: 12px;
 }

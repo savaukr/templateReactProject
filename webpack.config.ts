@@ -13,6 +13,7 @@ export default (env: BuilEnv) => {
 
 	const mode = env.mode || 'development';
 	const isDev = mode === 'development';
+	// eslint-disable-next-line @typescript-eslint/naming-convention
 	const PORT = env.port || 3000;
 
 	const config: webpack.Configuration = buildWbpackConfig({

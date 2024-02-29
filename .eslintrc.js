@@ -36,6 +36,7 @@ module.exports = {
     '@typescript-eslint/consistent-type-definitions': 'off',
     '@typescript-eslint/object-curly-spacing': 'off',
     'object-curly-spacing': 'off',
+    '@typescript-eslint/ban-ts-comment': 'off',
     // '@typescript-eslint/naming-convention': 'off',
     '@typescript-eslint/naming-convention': [
           'error',

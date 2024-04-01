@@ -4,6 +4,8 @@ import HtmlWebpackPlugin from 'html-webpack-plugin';
 import {type BuildOptions} from './types/config';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 
+import {BundleAnalyzerPlugin} from 'webpack-bundle-analyzer';
+
 // eslint-disable-next-line @typescript-eslint/naming-convention
 const {ProgressPlugin} = webpack;
 
@@ -24,5 +26,6 @@ export default function buildPlugins({
 			// eslint-disable-next-line @typescript-eslint/naming-convention
 			__IS_DEV__: JSON.stringify(isDev),
 		}),
+		new BundleAnalyzerPlugin({openAnalyzer: false}),
 	];
 }

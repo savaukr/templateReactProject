@@ -3,14 +3,12 @@ import {PageError} from 'widgents/PageError';
 import './ErrorBoundery.scss';
 // import { withTranslation } from 'react-i18next';
 
-// eslint-disable-next-line @typescript-eslint/consistent-type-definitions
-interface ErrorBoundaryProps {
+type ErrorBoundaryProps = {
 	children: ReactNode;
-}
-// eslint-disable-next-line @typescript-eslint/consistent-type-definitions
-interface ErrorBoundaryState {
+};
+type ErrorBoundaryState = {
 	hasError: boolean;
-}
+};
 
 class ErrorBoundary extends React.Component<ErrorBoundaryProps, ErrorBoundaryState> {
 	static getDerivedStateFromError(error: Error) {

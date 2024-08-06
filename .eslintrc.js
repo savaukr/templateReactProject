@@ -4,7 +4,7 @@ module.exports = {
     es2021: true,
     jest: true,
   },
-  extends: ['xo', 'plugin:react/recommended'],
+  extends: ['xo', 'plugin:react/recommended', 'plugin:storybook/recommended'],
   overrides: [
     {
       env: {

@@ -1,54 +1,108 @@
+import React from 'react'
+
+// import { type ComponentMeta, type ComponentStory } from '@storybook/react'
 import type { Meta, StoryObj } from '@storybook/react';
-import { fn } from '@storybook/test';
-import Button from './Button';
 
-// More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
-const meta = {
-  title: 'shared/Button',
-  component: Button,
-  parameters: {
-    // Optional parameter to center the component in the Canvas. More info: https://storybook.js.org/docs/configure/story-layout
-    layout: 'centered',
-  },
-  // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/writing-docs/autodocs
-  tags: ['autodocs'],
-  // More on argTypes: https://storybook.js.org/docs/api/argtypes
-  argTypes: {
-    // backgroundColor: { control: 'color' },
-  },
-  // Use `fn` to spy on the onClick arg, which will appear in the actions panel once invoked: https://storybook.js.org/docs/essentials/actions#action-args
-  args: { onClick: fn() },
-} satisfies Meta<typeof Button>;
+import Button from './Button'
+// import { Button, ButtonSize, ButtonTheme } from './Button'
+// import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator'
+// import { Theme } from 'app/providers/ThemeProvider'
+import 'app/styles/index.scss'
 
-export default meta;
-type Story = StoryObj<typeof meta>;
+//
 
-// More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
-export const Primary: Story = {
-  args: {
-  children:'Text'
-    // primary: true,
-    // label: 'Button',
-  },
+  
+const meta: Meta<typeof Button> = { component: Button };
+// export default meta;
+ 
+type Story = StoryObj<typeof Button>;
+ 
+export const Primary: Story = { args: { children: 'Text' } };
+
+export default { shared: Button };
+export const PrimaryOnDark: Story = {
+  ...Primary,
+  parameters: {  },
 };
 
-export const Secondary: Story = {
-  args: {
-   children:'Text'
-    // label: 'Button',
-  },
-};
+////
 
-// export const Large: Story = {
-//   args: {
-//     // size: 'large',
-//     // label: 'Button',
-//   },
-// };
+// export default {
+//   title: 'shared/Button',
+//   component: Button
+// } as ComponentMeta<typeof Button>
 
-// export const Small: Story = {
-//   args: {
-//     // size: 'small',
-//     // label: 'Button',
-//   },
-// };
+// const Template: ComponentStory<typeof Button> = (args:any) => <Button {...args} />
+
+// export const Primary = Template.bind({})
+// Primary.args = {
+//   children: 'Text'
+// }
+
+// export const Clear = Template.bind({})
+// Clear.args = {
+//   children: 'Text',
+//   // theme: ButtonTheme.CLEAR
+// }
+
+// export const Outline = Template.bind({})
+// Outline.args = {
+//   children: 'Text',
+//   // theme: ButtonTheme.OUTLINE
+// }
+
+// export const OutlineDark = Template.bind({})
+// OutlineDark.args = {
+//   children: 'Text',
+//   // theme: ButtonTheme.OUTLINE
+// }
+
+// // OutlineDark.decorators = [ThemeDecorator(Theme.DARK)]
+
+// export const OutlineSquareDarkSizeM = Template.bind({})
+
+// OutlineSquareDarkSizeM.args = {
+//   children: 'Text',
+//   // theme: ButtonTheme.OUTLINE,
+//   // size: ButtonSize.M,
+//   // square: true
+// }
+
+// export const OutlineSquareDarkSizeL = Template.bind({})
+// OutlineSquareDarkSizeL.args = {
+//   children: 'Text',
+//   // theme: ButtonTheme.OUTLINE,
+//   // size: ButtonSize.L,
+//   square: true
+// }
+
+// export const OutlineSquareSizeXL = Template.bind({})
+// OutlineSquareSizeXL.args = {
+//   children: 'Text',
+//   // theme: ButtonTheme.OUTLINE,
+//   // size: ButtonSize.XL,
+//   // square: true
+// }
+
+// export const OutlineDarkSizeM = Template.bind({})
+// OutlineDarkSizeM.args = {
+//   children: 'Text',
+//   // theme: ButtonTheme.OUTLINE,
+//   // size: ButtonSize.M
+// }
+// // OutlineDarkSizeM.decorators = [ThemeDecorator(Theme.DARK)]
+
+// export const OutlineDarkSizeL = Template.bind({})
+// OutlineDarkSizeL.args = {
+//   children: 'Text',
+//   // theme: ButtonTheme.OUTLINE,
+//   // size: ButtonSize.L
+// }
+// // OutlineDarkSizeL.decorators = [ThemeDecorator(Theme.DARK)]
+
+// export const OutlineSizeXL = Template.bind({})
+// OutlineSizeXL.args = {
+//   children: 'Text',
+//   // theme: ButtonTheme.OUTLINE,
+//   // size: ButtonSize.XL
+// }
